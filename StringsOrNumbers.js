@@ -45,4 +45,4 @@ const stringsOrNumbersConverter = function(input){
 console.log(stringsOrNumbersConverter("joseph"));
 
 
-// I did not achieve my target 100% because if a string is JOSEPH, you get 914174157 but it is not possible to put the same number and get back JOSEPH. This is mainly because letter like O is 14 which will be corresponding to ["b", "e"]
+// I did not achieve my target 100% because if a string is JOSEPH, you get 914174157 but it is not possible to put the same number and get back JOSEPH. This is mainly because letter like O is 14 which will be corresponding to [1: "b", 4: "e"]
