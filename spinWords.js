@@ -1,19 +1,15 @@
 function spinWords(string){
-  let longLettersReversed = [];
+  let reversedLongChars = [];
 
-  longLettersReversed = string.split(" ")
+  reversedLongChars = string.split(" ")
 
-  return longLettersReversed
+  return reversedLongChars
   .map(word => {
 
     if(word.length >= 5){
       return word.split("").reverse().join("")
-      // console.log(word.split("").reverse().join(""))
-      // console.log(`${word} testing`)
     } else{
       return word
-      // console.log(`${word} no testing`)
-      // console.log(word)
     }
   }).join(" ")
 
