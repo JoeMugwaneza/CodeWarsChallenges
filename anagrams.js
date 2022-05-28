@@ -1,26 +1,24 @@
 function anagrams(word, words) {
     let outcome = [];
-    let equalChars = [];
-    let referenceWord = word.split("");
+    // let equalChars = [];
+    let referenceWord = word.split("").sort().join("");
+    const anagramsIndexes = [];
 
+    let newWords = [...words.map(word => word.split("").sort().join(""))]
+    for(let i = 0; i < newWords.length; i++){
+        if(referenceWord === newWords[i]){
+            anagramsIndexes.push(i)
 
-     words.map(word => {
-         let endWord = word.split("");
-        if(referenceWord.length === endWord.length){
-            let i = 0;
-            while(i < referenceWord.length){
-                if(referenceWord[i] === endWord[i]){
-                    outcome.push(endWord.join(""));
-                };
-                i++;
-            };
-            
         }
-        
-    })
-    
-    // return equalChars;
-    
+    }
+    for( let i = 0; i < words.length; i++){
+        for(let j = 0; j < anagramsIndexes.length; j++){
+            if(i === j){
+                outcome.push(words[anagramsIndexes[j]])
+            }
+        }
+    }
+    return outcome;
 }
 
-console.log(anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']));
+console.log(anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']));
