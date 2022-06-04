@@ -6,7 +6,9 @@
 // * 'abcdef' => ['ab', 'cd', 'ef']
 
 function solution(str){
-    return str.split('')
+    return str.split('').reduce(function(a, b){
+        
+    })
 }
 
 console.log(solution("abc"));
