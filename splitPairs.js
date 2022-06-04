@@ -6,9 +6,22 @@
 // * 'abcdef' => ['ab', 'cd', 'ef']
 
 function solution(str){
-    return str.split('').reduce(function(a, b){
-        
-    })
+    let splitedChars = str.split('')
+    if(splitedChars.length%2 !=0){
+        splitedChars.push("_");
+    }
+    
+    function splitByTwo(splitedChars, chunkSize) {
+        const finalArray = [];
+        for (let i = 0; i <splitedChars.length; i += chunkSize) {
+            const chunk = splitedChars.slice(i, i + chunkSize);
+            finalArray.push(chunk);
+        }
+        return finalArray;
+    }
+    
+    return splitByTwo(splitedChars.join(""),2)
+
 }
 
 console.log(solution("abc"));
