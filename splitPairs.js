@@ -6,21 +6,22 @@
 // * 'abcdef' => ['ab', 'cd', 'ef']
 
 function solution(str){
-    let splitedChars = str.split('')
-    if(splitedChars.length%2 !=0){
-        splitedChars.push("_");
+    let splitChars = str.split('')
+    if(splitChars.length%2 !=0){
+        splitChars.push("_");
     }
     
-    function splitByTwo(splitedChars, chunkSize) {
+    function splitByTwo(splitChars, chunkSize) {
         const finalArray = [];
-        for (let i = 0; i <splitedChars.length; i += chunkSize) {
-            const chunk = splitedChars.slice(i, i + chunkSize);
+        for (let i = 0; i < splitChars.length; i += chunkSize) {
+            const chunk = splitChars.slice(i, i + chunkSize);
+            // chunk = splitedChars.slice(1,2)
             finalArray.push(chunk);
         }
         return finalArray;
     }
     
-    return splitByTwo(splitedChars.join(""),2)
+    return splitByTwo(splitChars.join(""),2)
 
 }
 
