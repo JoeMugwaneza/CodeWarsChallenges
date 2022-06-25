@@ -24,7 +24,5 @@ function validBraces(braces){
   }
 
   
-validBraces("[(])")
-// [({
-
+validBraces("[()}")
     
