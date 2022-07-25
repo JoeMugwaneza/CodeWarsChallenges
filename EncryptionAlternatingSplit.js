@@ -26,9 +26,16 @@
 
 const encrypt= (...args) =>{
     let s = args[0];
-    
+    let newStr = [];
+    s.split("").map(e =>{
+       if(e % 2 !== 0) newStr.push(e);
+    });
 
-    // return s
+    s.split("").map(e =>{
+        if(e%2 === 0) newStr.push(e)
+    })
+
+    console.log(newStr.join(""));
 }
 
-console.log(encrypt("12345", 2));
+console.log(encrypt("012345", 2));
