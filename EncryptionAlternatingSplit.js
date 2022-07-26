@@ -24,18 +24,19 @@
 // Have fun coding it and please don't forget to vote and rank this kata! :-)
 
 
-const encrypt= (...args) =>{
-    let s = args[0];
-    let newStr = [];
-    s.split("").map(e =>{
-       if(e % 2 !== 0) newStr.push(e);
-    });
+function encrypt(text, n){
+    if(!text){
+        return text
+    }
 
-    s.split("").map(e =>{
-        if(e%2 === 0) newStr.push(e)
-    })
+    var chars = text.split('');
+    while (n-- > 0){
+        let oddChars = chars.filter((c, i) => i & 1);
+        let evenChars = chars.filter((c, i) => !(i & 1));
+        chars = oddChars.concat(evenChars);
+    }
 
-    console.log(newStr.join(""));
+    return chars.join('');
 }
 
-console.log(encrypt("012345", 2));
+encrypt("012345", 1)
