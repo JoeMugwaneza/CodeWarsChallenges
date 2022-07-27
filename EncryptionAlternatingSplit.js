@@ -39,4 +39,27 @@ function encrypt(text, n){
     return chars.join('');
 }
 
-encrypt("012345", 1)
+function decrypt(encryptText, n){
+    if(!encryptText){
+        return encryptText;
+    }
+
+    let chars = encryptText.split('')
+    let mid = parseInt(chars.length / 2);
+
+    while(n-- > 0){
+        let oddChars = chars.slice(0, mid);
+        let evenChars = chars.slice(mid);
+        chars = []; 
+        while(oddChars.length || evenChars.length){
+            if(evenChars.length){
+                chars.push(evenChars.shift())
+            }
+            if(oddChars.length){
+                chars.push(oddChars.shift())
+            }
+        }
+    }
+    return chars.join('');
+}
+
