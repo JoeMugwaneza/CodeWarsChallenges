@@ -50,6 +50,7 @@ function decrypt(encryptText, n){
     while(n-- > 0){
         let oddChars = chars.slice(0, mid);
         let evenChars = chars.slice(mid);
+
         chars = []; 
         while(oddChars.length || evenChars.length){
             if(evenChars.length){
@@ -63,3 +64,4 @@ function decrypt(encryptText, n){
     return chars.join('');
 }
 
+console.log(decrypt("32104", 1))
